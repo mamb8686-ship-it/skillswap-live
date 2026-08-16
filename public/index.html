@@ -1,0 +1,93 @@
+*{box-sizing:border-box;font-family:Cairo,sans-serif}body{margin:0;background:#090d16;color:#f8fafc;min-height:100vh}header{position:sticky;top:0;z-index:5;padding:15px 5%;background:#0f172acc;backdrop-filter:blur(15px);display:flex;justify-content:space-between}.logo{font-size:1.4rem;font-weight:900;color:#818cf8}.credits{color:#c7d2fe}.container{max-width:1100px;margin:30px auto;padding:0 18px}.hero,.card,.stats{background:#161e31c7;border:1px solid #ffffff14;border-radius:20px}.hero{text-align:center;padding:35px 20px}.hero h1{font-size:2rem}.hero p,.stat p,.rating,.label{color:#94a3b8}.inputs{display:flex;gap:12px;flex-wrap:wrap;max-width:800px;margin:20px auto}.ibox{flex:1;min-width:240px;padding:12px;background:#0f172add;border:1px solid #ffffff12;border-radius:12px;display:flex;gap:8px}.ibox input{width:100%;background:none;border:0;outline:0;color:#fff}.primary,.connect{border:0;border-radius:12px;padding:13px 20px;font-weight:800;color:#fff;background:#6366f1}.stats{display:flex;justify-content:space-around;text-align:center;margin:25px 0;padding:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.card{padding:20px;position:relative}.online{position:absolute;left:15px;top:15px;color:#34d399;font-size:.75rem}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#10b981;margin-left:5px}.user{display:flex;gap:12px;align-items:center}.avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid #818cf8}.skills{margin:18px 0;padding:12px;background:#0f172a99;border-radius:12px}.skill{display:flex;justify-content:space-between;margin:8px 0}.tag{padding:4px 9px;border-radius:7px;font-weight:700;font-size:.8rem}.teach{background:#10b98122;color:#34d399}.learn{background:#38bdf822;color:#38bdf8}.connect{width:100%;background:#6366f11a;border:1px solid #6366f1}.modal,#video{position:fixed;inset:0;background:#000d;z-index:100;display:none;align-items:center;justify-content:center}.modal.active,#video.active{display:flex}.box{width:min(420px,90%);padding:25px;text-align:center;background:#161e31;border:1px solid #6366f155;border-radius:20px}.box img{width:90px;height:90px;border-radius:50%;object-fit:cover}.danger{background:#ef4444;color:#fff;border:0;border-radius:10px;padding:10px 20px}.remote{position:absolute;inset:0;background:#020617;display:flex;align-items:center;justify-content:center}.remote video{width:100%;height:100%;object-fit:cover}.local{position:absolute;z-index:3;top:80px;left:12px;width:110px;height:155px;border-radius:15px;overflow:hidden;border:2px solid #fff4}.local video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}.top{position:absolute;z-index:4;top:0;left:0;right:0;padding:15px;background:linear-gradient(#000b,transparent);display:flex;justify-content:space-between}.controls{position:absolute;z-index:4;bottom:0;left:0;right:0;padding:30px;display:flex;justify-content:center;gap:12px;background:linear-gradient(transparent,#000d)}.ctrl{width:55px;height:55px;border-radius:50%;border:1px solid #fff3;background:#ffffff19;color:#fff}.end,.off{background:#ef4444}.permission{position:absolute;z-index:6;background:#0f172af5;padding:22px;border-radius:18px;text-align:center;width:min(350px,85%);display:none}.permission button{background:#6366f1;color:#fff;border:0;padding:10px 18px;border-radius:10px}@media(max-width:700px){.hero h1{font-size:1.5rem}.stats{font-size:.8rem}} 
+
+SkillSwap Live
+
+الرصيد: 45 دقيقة
+
+تبادل المهارات مباشرة بالفيديو
+
+علّم ما تتقنه وتعلّم ما تحبه عبر WebRTC.
+
+🎓
+
+📚
+
+🎥 ابدأ التبادل المباشر الآن
+
+1
+
+مستخدم متصل
+
+15,000+
+
+جلسة ناجحة
+
+4.9/5
+
+التقييم
+
+متصل
+
+￼
+
+أحمد المحمدي
+
+⭐ 4.9 (24 جلسة)
+
+يعلّم:Flutter
+
+يتعلم:الإنجليزية
+
+📞 طلب مكالمة (15 د)
+
+متصل
+
+￼
+
+سارة خالد
+
+⭐ 5.0 (40 جلسة)
+
+تعلّم:UI/UX
+
+تتعلم:المونتاج
+
+📞 طلب مكالمة (15 د)
+
+متصل
+
+￼
+
+عمر الشريف
+
+⭐ 4.7 (12 جلسة)
+
+يعلّم:الجيتار
+
+يتعلم:التسويق
+
+📞 طلب مكالمة (15 د)
+
+￼
+
+جاري الاتصال
+
+جاري فتح غرفة الفيديو...
+
+إلغاء
+
+بانتظار الشريك
+
+إذا ظهر طلب الكاميرا اضغط سماح.
+
+مكالمة فيديو00:00
+
+نحتاج الكاميرا والميكروفون
+
+اضغط الزر ثم اختر سماح.
+
+السماح بالكاميرا والصوت
+
+🎙️📹📵
+
+const socket=io();let stream=null,pc=null,sec=0,ti=null,room=null;const ice={iceServers:[{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'}]};socket.on('connected',d=>document.getElementById('online').textContent=d.online||1);function note(t){alert(t)}function match(){let a=teach.value.trim(),b=learn.value.trim();if(!a||!b)return note('أدخل المهارتين أولاً');socket.emit('find-match',{teach:a,learn:b});note('جارٍ البحث عن شريك...')}socket.on('match-waiting',()=>note('لا يوجد شريك مطابق الآن. اترك الصفحة مفتوحة.'));socket.on('matched',async d=>{room=d.roomId;openVideo(d.partnerName);await media();if(d.initiator)offer()});function openVideo(n,img){video.classList.add('active');rname.textContent=n;topname.textContent=n;sec=0;clearInterval(ti);ti=setInterval(()=>{sec++;timer.textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')},1000)}async function media(){try{stream=stream||await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:1280},height:{ideal:720}},audio:{echoCancellation:true,noiseSuppression:true}});lv.srcObject=stream;perm.style.display='none';return stream}catch(e){perm.style.display='block';note('اسمح بالكاميرا والميكروفون. استخدم الموقع عبر HTTPS.')}}function peer(){if(pc)return pc;pc=new RTCPeerConnection(ice);stream.getTracks().forEach(t=>pc.addTrack(t,stream));pc.ontrack=e=>{rv.srcObject=e.streams[0];wait.style.display='none'};pc.onicecandidate=e=>e.candidate&&socket.emit('ice-candidate',e.candidate);return pc}async function offer(){let p=peer(),o=await p.createOffer();await p.setLocalDescription(o);socket.emit('offer',o)}socket.on('offer',async o=>{let p=peer();await p.setRemoteDescription(o);let a=await p.createAnswer();await p.setLocalDescription(a);socket.emit('answer',a)});socket.on('answer',a=>pc&&pc.setRemoteDescription(a));socket.on('ice-candidate',c=>pc&&pc.addIceCandidate(c).catch(()=>{}));function mute(){if(!stream)return;let t=stream.getAudioTracks()[0];t.enabled=!t.enabled;mute.classList.toggle('off',!t.enabled);mute.textContent=t.enabled?'🎙️':'🔇'}function cam(){if(!stream)return;let t=stream.getVideoTracks()[0];t.enabled=!t.enabled;cam.classList.toggle('off',!t.enabled);cam.textContent=t.enabled?'📹':'🚫'}function hang(){socket.emit('leave-call');if(pc){pc.close();pc=null}if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}lv.srcObject=null;rv.srcObject=null;video.classList.remove('active');clearInterval(ti)}function demoCall(n,img){mimg.src=img;mtitle.textContent='جاري الاتصال بـ '+n;modal.classList.add('active');setTimeout(async()=>{modal.classList.remove('active');openVideo(n);await media()},700)}function closeModal(){modal.classList.remove('active')}window.addEventListener('beforeunload',()=>socket.emit('leave-call')); 
